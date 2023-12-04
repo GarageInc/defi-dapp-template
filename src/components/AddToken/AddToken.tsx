@@ -62,8 +62,8 @@ const Plus = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  color: #202136;
+  background: ${({ theme }) => theme.white};
+  color: #f8faff;
   border-radius: 50%;
   z-index: 10;
   padding-bottom: 2px;

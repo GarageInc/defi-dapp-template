@@ -3,7 +3,7 @@ import { AlertCircle, CheckCircle } from 'react-feather'
 import styled, { ThemeContext } from 'styled-components'
 
 import { useActiveWeb3React } from '../../hooks/web3'
-import { TYPE } from '../../theme'
+import { TYPE } from '../../theme/theme'
 import { ExternalLink } from '../../theme/components'
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import { AutoColumn } from '../Column'

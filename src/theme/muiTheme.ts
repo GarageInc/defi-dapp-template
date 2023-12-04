@@ -13,7 +13,7 @@ const muiTheme = createTheme({
     brightViolet: createColor('#5E2FDD'),
   },
   typography: {
-    fontFamily: ['Carmen Sans', 'Uniform Pro'].join(','),
+    fontFamily: ['Neue Montreal'].join(','),
   },
   spacing: 1,
   components: {
@@ -29,7 +29,6 @@ const muiTheme = createTheme({
           textTransform: 'none',
           padding: '0',
           lineHeight: 'normal',
-          fontFamily: 'Uniform Pro',
           fontSize: 17,
         },
       },

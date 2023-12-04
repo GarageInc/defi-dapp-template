@@ -9,13 +9,11 @@ export const Container = styled(Box)`
 `
 
 export const GradientMenuLabel = styled(GradientTypography)`
-  font-family: ${({ theme }) => theme.fontUniform};
   font-size: 15px;
   font-weight: bold;
 `
 
 export const NormalMenuLabel = styled(Typography)`
-  font-family: ${({ theme }) => theme.fontUniform};
   font-size: 15px;
   font-weight: 500;
   color: white;

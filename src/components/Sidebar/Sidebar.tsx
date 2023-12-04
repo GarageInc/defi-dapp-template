@@ -16,8 +16,8 @@ const StyledMenuLinkFarm = styled(StyledNavLink).attrs({
   grid-template-columns: 1fr 3fr;
   grid-column-gap: 15px;
   align-items: center;
-  color: #fff;
-  font-family: ${({ theme }) => theme.fontUniform};
+  color: ${({ theme }) => theme.white};
+
   font-weight: bold;
   transition: all 0.3s;
 
@@ -46,12 +46,12 @@ const StyledMenuLinkFarm = styled(StyledNavLink).attrs({
     }
     :hover {
       transform: translateX(0px);
-      color: #fff;
+      color: ${({ theme }) => theme.white};
       transition: all 0.3s;
     }
     :focus {
       transition: all 0.3s;
-      color: #fff;
+      color: ${({ theme }) => theme.white};
     }
   }
 

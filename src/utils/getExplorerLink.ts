@@ -40,47 +40,6 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
         return `https://ftmscan.com/`
     }
   }
-  if (chainId === SupportedChainId.MOONBEAM) {
-    switch (type) {
-      case ExplorerDataType.TRANSACTION:
-        return `https://moonscan.io/tx/${data}`
-      case ExplorerDataType.ADDRESS:
-      case ExplorerDataType.TOKEN:
-        return `https://moonscan.io/address/${data}`
-      case ExplorerDataType.BLOCK:
-        return `https://moonscan.io/block/${data}`
-      default:
-        return `https://moonscan.io/`
-    }
-  }
-
-  if (chainId === SupportedChainId.ARBITRUM_ONE) {
-    switch (type) {
-      case ExplorerDataType.TRANSACTION:
-        return `https://arbiscan.io/tx/${data}`
-      case ExplorerDataType.ADDRESS:
-      case ExplorerDataType.TOKEN:
-        return `https://arbiscan.io/address/${data}`
-      case ExplorerDataType.BLOCK:
-        return `https://arbiscan.io/block/${data}`
-      default:
-        return `https://arbiscan.io/`
-    }
-  }
-
-  if (chainId === SupportedChainId.ARBITRUM_RINKEBY) {
-    switch (type) {
-      case ExplorerDataType.TRANSACTION:
-        return `https://rinkeby-arbiscan.io/tx/${data}`
-      case ExplorerDataType.ADDRESS:
-      case ExplorerDataType.TOKEN:
-        return `https://rinkeby-arbiscan.io/address/${data}`
-      case ExplorerDataType.BLOCK:
-        return `https://rinkeby-arbiscan.io/block/${data}`
-      default:
-        return `https://rinkeby-arbiscan.io/`
-    }
-  }
 
   const prefix = `https://${ETHERSCAN_PREFIXES[chainId] ?? ''}etherscan.io`
 

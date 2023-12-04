@@ -12,8 +12,7 @@ export const InfoPanel = styled(Box)`
 `
 
 export const FooterLabel = styled(Typography)`
-  font-family: ${({ theme }) => theme.fontUniform};
   font-size: 14px;
-  color: ${({ theme }) => theme.text5};
+  color: ${({ theme }) => theme.text1};
   line-height: 21px;
 `

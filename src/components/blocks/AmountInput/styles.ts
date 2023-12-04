@@ -71,7 +71,7 @@ export const MaxButton = styled(Button).attrs({
   variant: 'outlined',
 })`
   font-weight: bold;
-  color: ${({ theme }) => theme.text5};
+  color: ${({ theme }) => theme.text1};
   font-size: 13px;
   height: 30px;
   min-width: 55px;
@@ -80,7 +80,7 @@ export const MaxButton = styled(Button).attrs({
 
   &,
   &:hover {
-    border-color: ${({ theme }) => theme.text5};
+    border-color: ${({ theme }) => theme.text1};
   }
 `
 
@@ -129,7 +129,7 @@ export const RightTokenBox = styled(Box)`
 
   p {
     font-weight: 500;
-    color: ${({ theme }) => theme.text5};
+    color: ${({ theme }) => theme.text1};
     font-size: 13px;
     margin-left: 6px;
   }

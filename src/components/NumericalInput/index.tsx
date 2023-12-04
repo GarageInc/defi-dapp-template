@@ -23,7 +23,6 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
   width: 100%;
   padding: 10px 25px;
   border-radius: 50px;
-  background: #33334b;
 
   border: 2px solid transparent;
   :focus {
@@ -37,7 +36,6 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
   width: 100%;
   padding: 10px 25px;
   border-radius: 50px;
-  background: #33334b;
   color: #9998b8;
   border: 2px solid transparent;
 
@@ -168,7 +166,6 @@ export const NumericalInputStyled = styled(Input)`
   width: 100%;
   padding: 10px 25px;
   border-radius: 50px;
-  background: #33334b;
   color: ${({ theme }) => theme.text2};
 
   border: 2px solid transparent;

@@ -59,7 +59,7 @@ const usePickerOptions = (options?: IPickerToken[]) => {
 
 const TokenBalance = ({ coin }: { coin: any }) => {
   const isNative = coin.symbol === 'eth'
-  const { chainId = SupportedChainId.ARBITRUM_ONE } = useActiveWeb3React()
+  const { chainId = SupportedChainId.MAINNET } = useActiveWeb3React()
   const stableCoinAddr = useMemo(() => coin?.token_addrs?.[chainId] || '', [coin, chainId])
   const decimals = useTokenDecimals(isNative ? '' : stableCoinAddr)
 

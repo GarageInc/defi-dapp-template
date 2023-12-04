@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useAllTransactions } from '../../state/transactions/hooks'
-import { ExternalLink } from '../../theme'
+import { ExternalLink } from '../../theme/theme'
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import Loader from '../Loader'
 import { RowFixed } from '../Row'
@@ -25,7 +25,7 @@ const TransactionState = styled(ExternalLink)<{ pending: boolean; success?: bool
   padding: 0.25rem 0rem;
   font-weight: 500;
   font-size: 0.825rem;
-  color: #fff;
+  color: ${({ theme }) => theme.white};
 `
 
 const IconWrapper = styled.div<{ pending: boolean; success?: boolean }>`

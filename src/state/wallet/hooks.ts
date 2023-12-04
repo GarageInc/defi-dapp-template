@@ -1,5 +1,5 @@
 import { Interface } from '@ethersproject/abi'
-import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import ERC721ABI from 'abis/erc721.json'
 import { Erc20Interface } from 'abis/types/Erc20'
 import { SupportedChainId } from 'constants/chainsinfo'
@@ -85,26 +85,4 @@ export function useNativeCurrencyBalance() {
   const results = useSingleCallResult(multicallContract, 'getEthBalance', deps)
 
   return results.result?.balance
-}
-
-function useCurrencyBalances(
-  account?: string,
-  currencies?: (Currency | undefined)[]
-): (CurrencyAmount<Currency> | undefined)[] {
-  const tokens = useMemo(
-    () => currencies?.filter((currency): currency is Token => currency?.isToken ?? false) ?? [],
-    [currencies]
-  )
-
-  const tokenBalances = useTokenBalances(account, tokens)
-
-  return useMemo(
-    () =>
-      currencies?.map((currency) => {
-        if (!account || !currency) return undefined
-        if (currency.isToken) return tokenBalances[currency.address]
-        return undefined
-      }) ?? [],
-    [account, currencies, tokenBalances]
-  )
 }

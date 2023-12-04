@@ -17,7 +17,7 @@ import store from './state'
 import ApplicationUpdater from './state/application/updater'
 import TransactionUpdater from './state/transactions/updater'
 import UserUpdater from './state/user/updater'
-import ThemeProvider, { ThemedGlobalStyle } from './theme'
+import ThemeProvider, { ThemedGlobalStyle } from './theme/theme'
 import RadialGradientByChainUpdater from './theme/RadialGradientByChainUpdater'
 
 if (window.ethereum) {

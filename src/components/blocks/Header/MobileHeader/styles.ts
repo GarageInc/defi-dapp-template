@@ -22,7 +22,6 @@ export const HamburgerButton = styled(IconButton)`
 `
 
 export const Title = styled(Typography)`
-  font-family: ${({ theme }) => theme.fontUniform};
   font-weight: bold;
   font-size: 20px;
 

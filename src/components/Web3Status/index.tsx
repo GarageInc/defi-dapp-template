@@ -19,7 +19,7 @@ import { shortenAddress } from '../../utils'
 import { ButtonSecondary } from '../Button'
 import Loader from '../Loader'
 import { RowBetween } from '../Row'
-import WalletModal from '../WalletModal'
+import WalletModal from '../WalletModal/WalletModal'
 
 const IconWrapper = styled.div<{ size?: number }>`
   ${({ theme }) => theme.flexColumnNoWrap};
@@ -48,18 +48,9 @@ const Web3StatusGeneric = styled(ButtonSecondary)`
     padding: 8px 12px;
   `};
 `
-const Web3StatusError = styled(Web3StatusGeneric)`
-  color: ${({ theme }) => theme.white};
-  margin: 0px;
-  font-weight: 500;
-  :hover,
-  :focus {
-    background-color: ${({ theme }) => darken(0.1, theme.red1)};
-  }
-`
 
 const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
-  background-color: #2d2137;
+  background-color: ${({ theme }) => theme.bg1};
   padding: 15px 25px;
   transition: all 0.3s;
 
@@ -67,7 +58,7 @@ const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
     color: ${({ theme }) => theme.primaryText1};
     background-color: #f64562;
     p {
-      color: #fff;
+      color: ${({ theme }) => theme.white};
     }
   }
 
@@ -83,7 +74,6 @@ const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
     `}
 
   p {
-    font-family: ${({ theme }) => theme.fontUniform};
     font-weight: bold;
     color: #f64562;
 

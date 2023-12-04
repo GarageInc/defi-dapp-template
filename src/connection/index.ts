@@ -58,7 +58,7 @@ const getIsGenericInjector = () => getIsInjected() && !getIsMetaMaskWallet() && 
 
 const MAGIC_KEY = 'pk_live_EFEFA1124432DBC0'
 
-const magicWalletChain = SupportedChainId.ARBITRUM_ONE
+const magicWalletChain = SupportedChainId.MAINNET
 
 const rpcMagic = RPC_URLS[magicWalletChain][0]
 

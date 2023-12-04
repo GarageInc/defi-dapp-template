@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import { useActiveWeb3React } from '../../hooks/web3'
-import { ExternalLink, TYPE } from '../../theme'
+import { ExternalLink, TYPE } from '../../theme/theme'
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 
 const StyledPolling = styled.div`

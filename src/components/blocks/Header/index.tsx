@@ -1,8 +1,8 @@
 import MobileHeader from 'components/blocks/Header/MobileHeader/MobileHeader'
-import DesktopHeader from 'components/Header'
+import DesktopHeader from 'components/Header/Header'
 import { useWindowSize } from 'hooks/useWindowSize'
 import { useMemo } from 'react'
-import { MEDIA_WIDTHS } from 'theme'
+import { MEDIA_WIDTHS } from 'theme/theme'
 
 export const useIsMobileDevice = () => {
   const { width: windowWidth } = useWindowSize()

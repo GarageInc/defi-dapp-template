@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 import { useActiveWeb3React } from '../../hooks/web3'
 import { clearAllTransactions } from '../../state/transactions/actions'
-import { ExternalLink, LinkStyledButton, TYPE } from '../../theme'
+import { ExternalLink, LinkStyledButton, TYPE } from '../../theme/theme'
 import { shortenAddress } from '../../utils'
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import { ButtonSecondary } from '../Button'
@@ -27,7 +27,6 @@ const Arrow = styled.div`
   border-radius: 10px;
 
   &:hover {
-    background-color: #33334b;
     cursor: pointer;
   }
 `
@@ -109,7 +108,6 @@ const LowerSection = styled.div`
   padding: 0 25px 25px;
   flex-grow: 1;
   overflow: auto;
-  font-family: ${({ theme }) => theme.fontCarmen} !important;
 
   h5 {
     margin: 0;

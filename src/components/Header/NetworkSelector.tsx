@@ -6,7 +6,7 @@ import { ArrowDownCircle, ChevronDown } from 'react-feather'
 import { ApplicationModal } from 'state/application/actions'
 import { useModalOpen, useToggleModal } from 'state/application/hooks'
 import styled from 'styled-components'
-import { ExternalLink, MEDIA_WIDTHS } from 'theme'
+import { ExternalLink, MEDIA_WIDTHS } from 'theme/theme'
 
 import { switchToNetwork } from '../../utils/switchToNetwork'
 
@@ -147,10 +147,6 @@ const SelectorControls = styled.div<{ interactive: boolean }>`
     margin-right: 5px;
   `};
 
-  ${({ theme }) => theme.mediaWidth.upToProSmall`
-    margin-right: 20px;
-  `};
-
   ${({ theme }) => theme.mediaWidth.upToTablet`
     margin-right: 0;
     padding: 9px 13px;
@@ -171,18 +167,7 @@ const SelectorWrapper = styled.div`
 const StyledChevronDown = styled(ChevronDown)`
   width: 16px;
 `
-const BridgeLabel = ({ chainId }: { chainId: SupportedChainId }) => {
-  switch (chainId) {
-    case SupportedChainId.ARBITRUM_ONE:
-    case SupportedChainId.ARBITRUM_RINKEBY:
-      return <>Arbitrum Bridge</>
-    case SupportedChainId.OPTIMISM:
-    case SupportedChainId.OPTIMISTIC_KOVAN:
-      return <>Optimism Bridge</>
-    default:
-      return <>Bridge</>
-  }
-}
+
 const ExplorerLabel = ({ chainId }: { chainId: SupportedChainId }) => {
   switch (chainId) {
     case SupportedChainId.ARBITRUM_ONE:

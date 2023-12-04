@@ -4,9 +4,8 @@ import styled from 'styled-components'
 
 const MuiButtonStyled = styled(MuiButton)`
   &.Mui-disabled {
-    background: #33334b;
     border: none;
-    color: #7c7b96;
+    color: ${({ theme }) => theme.text1};
   }
 `
 

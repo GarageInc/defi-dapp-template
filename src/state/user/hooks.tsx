@@ -3,7 +3,6 @@ import { useCallback } from 'react'
 import { shallowEqual } from 'react-redux'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 
-import { AppState } from '../index'
 import { updateUserDarkMode } from './actions'
 
 export function useIsDarkMode(): boolean {
@@ -31,8 +30,4 @@ export function useDarkModeManager(): [boolean, () => void] {
 
 function useUserLocale(): SupportedLocale | null {
   return useAppSelector((state) => state.user.userLocale)
-}
-
-export function useURLWarningVisible(): boolean {
-  return useAppSelector((state: AppState) => state.user.URLWarningVisible)
 }

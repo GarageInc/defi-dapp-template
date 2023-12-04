@@ -1,10 +1,9 @@
 import { SupportedChainId } from 'constants/chainsinfo'
 import { useActiveWeb3React } from 'hooks/web3'
 import styled from 'styled-components'
-import { MEDIA_WIDTHS } from 'theme'
+import { MEDIA_WIDTHS } from 'theme/theme'
 
 import { useActivePopups } from '../../state/application/hooks'
-import { useURLWarningVisible } from '../../state/user/hooks'
 import { AutoColumn } from '../Column'
 import PopupItem from './PopupItem'
 
@@ -37,7 +36,7 @@ const StopOverflowQuery = `@media screen and (min-width: ${MEDIA_WIDTHS.upToMedi
   MEDIA_WIDTHS.upToMedium + 500
 }px)`
 
-const FixedPopupColumn = styled(AutoColumn)<{ extraPadding: boolean; xlPadding: boolean }>`
+const FixedPopupColumn = styled(AutoColumn)<{ extraPadding?: boolean; xlPadding: boolean }>`
   position: fixed;
   top: 90px;
   right: 25px;
@@ -60,15 +59,13 @@ export default function Popups() {
   // get all popups
   const activePopups = useActivePopups()
 
-  const urlWarningActive = useURLWarningVisible()
-
   // need extra padding if network is not L1 Ethereum
   const { chainId } = useActiveWeb3React()
   const isNotOnMainnet = Boolean(chainId && chainId !== SupportedChainId.MAINNET)
 
   return (
     <>
-      <FixedPopupColumn gap="20px" extraPadding={urlWarningActive} xlPadding={isNotOnMainnet}>
+      <FixedPopupColumn gap="20px" extraPadding={false} xlPadding={isNotOnMainnet}>
         {activePopups.map((item) => (
           <PopupItem key={item.key} content={item.content} popKey={item.key} removeAfterMs={item.removeAfterMs} />
         ))}

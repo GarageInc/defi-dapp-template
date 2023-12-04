@@ -11,10 +11,6 @@ export type PopupContent =
       summary?: string
     }
   | {
-      type: PopupType.Order
-      orderHash: string
-    }
-  | {
       type: PopupType.FailedSwitchNetwork
       failedSwitchNetwork: ChainId
     }
@@ -29,38 +25,12 @@ export type PopupContent =
 export enum ApplicationModal {
   WALLET,
   SETTINGS,
-  SELF_CLAIM,
-  ADDRESS_CLAIM,
-  CLAIM_POPUP,
   MENU,
-  DELEGATE,
-  VOTE,
   POOL_OVERVIEW_OPTIONS,
-  ARBITRUM_OPTIONS,
-  BRIDGE_ZOO,
-  BRIDGE_DAI,
-  BRIDGE_MODAL,
-  BOOST_ZOO_ETH,
-  VOTE_GLP,
   NETWORK_SELECTOR,
-  ALMOST_HERE,
-  DEGEN_MODE,
-  COMMUNITY_ROUND_AGREEMENT,
-  CLAIM_REWARDS,
-  CLAIM_INCENTIVES,
-  CLAIM_REWARDS_2,
-  PORTFOLIO_SUCCESS,
-  UNSTAKE_VOTES,
-  PROJECT_VOTING,
-  PROJECT_ACTIONS,
-  LIQUIDITY_MINING,
 }
 
-export enum ApplicationSubModal {
-  GET_LP_STAGE2,
-  GET_LP_STAGE4,
-  BOOST_BY_REVOTING,
-}
+export enum ApplicationSubModal {}
 
 export const updateChainId = createAction<{ chainId: number | null }>('application/updateChainId')
 export const updateBlockNumber = createAction<{ chainId: number; blockNumber: number }>('application/updateBlockNumber')

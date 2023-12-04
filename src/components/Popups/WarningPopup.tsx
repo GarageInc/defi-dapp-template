@@ -2,7 +2,7 @@ import { ReactElement, useContext } from 'react'
 import { AlertCircle, CheckCircle } from 'react-feather'
 import styled, { ThemeContext } from 'styled-components'
 
-import { TYPE } from '../../theme'
+import { TYPE } from '../../theme/theme'
 import { AutoColumn } from '../Column'
 import { AutoRow } from '../Row'
 

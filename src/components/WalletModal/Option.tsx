@@ -10,12 +10,9 @@ const InfoCard = styled.button<{ active?: boolean }>`
   background-color: ${({ theme, active }) => (active ? theme.bg3 : theme.bg2)};
   padding: 15px 25px;
   outline: none !important;
-  border: 2px solid #33334b;
   border-radius: 50px;
   width: 100% !important;
-  &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.primary1};
-  }
+  border: none;
 `
 
 const OptionCardLeft = styled.div`
@@ -25,33 +22,23 @@ const OptionCardLeft = styled.div`
 `
 
 const OptionCard = styled(InfoCard as any)`
-  background-color: #33334b;
-  border: 2px solid #33334b;
+  background-color: ${({ theme }) => theme.white};
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
   margin-top: 2rem;
-  padding: 15px 25px;
-  box-shadow: 5px 10px 20px rgb(0 0 0 / 20%);
+  padding: 11px 16px;
   transition: box-shadow 0.5s ease-in;
-  :hover,
-  :active {
-    border: 2px solid #f64562 !important;
-    box-shadow: 6px 12px 24px rgb(0 0 0 / 25%);
-    background-color: #33334b !important;
-  }
-
-  :focus {
-    box-shadow: 5px 10px 20px rgb(0 0 0 / 20%);
-  }
+  color: ${({ theme }) => theme.black};
+  box-shadow: ${({ theme }) => theme.boxShadow};
+  justify-content: center;
 `
 
 const OptionCardClickable = styled(OptionCard as any)<{ clickable?: boolean }>`
   margin-top: 0;
   pointer-events: ${({ clickable }) => (clickable ? 'all' : 'none')};
   cursor: ${({ clickable }) => (clickable ? 'pointer' : '')};
-  border: ${({ clickable, theme }) => (clickable ? `1px solid ${theme.primary1}` : ``)};
   opacity: ${({ disabled, selected }) => (disabled && !selected ? '0.5' : '1')};
 `
 
@@ -59,11 +46,13 @@ const HeaderText = styled.div`
   ${flexRowNoWrap};
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  font-weight: 535;
+  font-size: 20px;
+  font-weight: 500;
   padding: 0 8px;
-  color: ${({ theme }) => theme.white};
+  gap: 8px;
+  color: ${({ theme }) => theme.black};
 `
+
 const IconWrapper = styled.div`
   ${flexRowNoWrap};
   align-items: center;
@@ -128,8 +117,14 @@ export default function Option({ connection }: OptionProps) {
       selected={isCurrentOptionPending}
       clickable={!active && !isCurrentOptionPending}
     >
+      <IconWrapper>
+        {isCurrentOptionPending && <Loader stroke="white" />}
+        <img src={connection.getIcon?.(false)} alt={connection.getName()} />
+      </IconWrapper>
+
       <OptionCardLeft>
         <HeaderText>
+          <div>{connection.getName()}</div>
           {active ? (
             <CircleWrapper>
               <GreenCircle>
@@ -139,14 +134,8 @@ export default function Option({ connection }: OptionProps) {
           ) : (
             ''
           )}
-          {connection.getName()}
         </HeaderText>
       </OptionCardLeft>
-
-      <IconWrapper>
-        {isCurrentOptionPending && <Loader stroke="white" />}
-        <img src={connection.getIcon?.(false)} alt={connection.getName()} />
-      </IconWrapper>
     </OptionCardClickable>
   )
 }

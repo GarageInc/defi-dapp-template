@@ -1,5 +1,5 @@
 import { useIsMobileDevice } from 'components/blocks/Header'
-import { ButtonGradient } from 'components/Button'
+import { ButtonRedStyle } from 'components/Button'
 import { Paths } from 'constants/paths'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -17,6 +17,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex: 1;
 `
 
 const Header = styled(Container)`
@@ -27,6 +29,8 @@ const PageWrapper = styled(Container)`
   flex: 1;
   justify-content: center;
   gap: 50px;
+  margin: auto;
+  margin-bottom: 100px;
 
   ${({ theme }) => theme.mediaWidth.upToPhone`
     justify-content: space-between;
@@ -51,9 +55,10 @@ export default function NotFound() {
         </Container>
         <Image src={IconZOO} alt="Liluni" />
       </Header>
-      <ButtonGradient width="400px" as={Link} to={Paths.HOME}>
+
+      <ButtonRedStyle width="400px" as={Link} to={Paths.HOME}>
         <>Oops, take me back to Home</>
-      </ButtonGradient>
+      </ButtonRedStyle>
     </PageWrapper>
   )
 }

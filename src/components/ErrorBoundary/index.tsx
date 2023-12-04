@@ -1,7 +1,7 @@
 import React, { ErrorInfo } from 'react'
 import styled from 'styled-components'
 
-import { TYPE } from '../../theme'
+import { TYPE } from '../../theme/theme'
 import { AutoColumn } from '../Column'
 
 const FallbackWrapper = styled.div`

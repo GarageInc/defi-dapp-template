@@ -31,7 +31,7 @@ const DropDown = styled(DropdownComp)`
     text-align: center;
 
     transition: background-color 0.3s;
-    color: #fff;
+    color: ${({ theme }) => theme.white};
 
     &:hover {
       color: ${({ theme }) => theme.text1};
@@ -41,7 +41,7 @@ const DropDown = styled(DropdownComp)`
     top: 17px;
     right: 24px;
     background: url(${IconArrowDown}) 50% 50% / cover no-repeat;
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     height: 15px;
     width: 15px;
     border: 0 !important;
@@ -70,12 +70,12 @@ const DropDown = styled(DropdownComp)`
     color: ${({ theme }) => theme.text2};
     &:hover {
       background: #9998b8;
-      color: #202136;
+      color: #f8faff;
     }
   }
 
   .Dropdown-option.is-selected {
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     background: #f64562;
   }
 
